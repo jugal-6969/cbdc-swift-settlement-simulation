@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+
+# Large regenerable output (recreated by running simulation.py)
+simulated_settlement_times.csv
