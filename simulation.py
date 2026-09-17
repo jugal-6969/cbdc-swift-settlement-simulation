@@ -18,7 +18,6 @@ Calibrated so the SWIFT rail reproduces the published SWIFT gpi benchmark
 
 All randomness is governed by a single fixed seed for exact reproducibility.
 
-Author: Jugal Bhagat
 """
 
 # Install scikit-posthocs if it is not already available in the environment.
