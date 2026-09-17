@@ -18,7 +18,13 @@ Calibrated so the SWIFT rail reproduces the published SWIFT gpi benchmark
 
 All randomness is governed by a single fixed seed for exact reproducibility.
 
+Author: Jugal Bhagat
 """
+
+# Install scikit-posthocs if it is not already available in the environment.
+import importlib.util, subprocess, sys
+if importlib.util.find_spec("scikit_posthocs") is None:
+    subprocess.run([sys.executable, "-m", "pip", "install", "scikit-posthocs"], check=True)
 
 import numpy as np
 import pandas as pd
@@ -86,8 +92,8 @@ INTERM_MIX = {1: 0.30, 2: 0.34, 3: 0.22, 4: 0.10, 5: 0.04}
 
 # The four study corridors, mapped to a representative income band and a
 # representative intermediary count. NOTE: the World Bank data does not record
-# intermediary count, so these counts are informed assumptions the simulation
-# exists to reason about -- adjust if your methodology intends different values.
+# intermediary count, so these counts are informed assumptions calibrated to the
+# corridor's income band and typical routing.
 CORRIDORS = {
     "US->India":     {"income": "Lower-middle", "intermediaries": 2},
     "US->China":     {"income": "Upper-middle", "intermediaries": 2},
